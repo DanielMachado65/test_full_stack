@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comprador: one
+  ingresso: one
+  pago: false
+
+two:
+  comprador: two
+  ingresso: two
+  pago: false

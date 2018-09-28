@@ -1,0 +1,2 @@
+class Comprador < ApplicationRecord
+end

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Preco:</strong>
+  <%= @ingresso.preco %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @ingresso.nome %>
+</p>
+
+<p>
+  <strong>Taxa:</strong>
+  <%= @ingresso.taxa %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @ingresso.data %>
+</p>
+
+<%= link_to 'Edit', edit_ingresso_path(@ingresso) %> |
+<%= link_to 'Back', ingressos_path %>
