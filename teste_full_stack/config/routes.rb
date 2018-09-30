@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  root 'pedidos#index', as: 'home'
+
+  devise_for :compradors
   resources :pedidos
   resources :ingressos
   resources :compradors

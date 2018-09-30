@@ -15,8 +15,8 @@
   <tbody>
     <% @pedidos.each do |pedido| %>
       <tr>
-        <td><%= pedido.comprador %></td>
-        <td><%= pedido.ingresso %></td>
+        <td><%= current_comprador.nome %></td>
+        <td><%= pedido.ingresso.nome %></td>
         <td><%= pedido.pago %></td>
         <td><%= link_to 'Show', pedido %></td>
         <td><%= link_to 'Edit', edit_pedido_path(pedido) %></td>

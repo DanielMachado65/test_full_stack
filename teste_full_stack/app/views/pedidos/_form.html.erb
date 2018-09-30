@@ -12,17 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :comprador_nome %>
-    <%= text_field_tag :comprador_nome, params[:consumidor_nome]%>
-  </div>
-  <div class="field">
-    <%= form.label :Teste %>
-    <%= text_field_tag :teste, params[:teste], placeholder: "Entre com o nome" %>
+    <%= form.label :comprador_id %>
+    <%= form.text_field :comprador_id, id: :pedido_comprador_id %>
   </div>
 
   <div class="field">
-    <%= form.label :ingresso_nome %>
-    <%= text_field_tag :ingresso_nome, params[:ingresso_nome]%>
+    <%= form.label :ingresso_id %>
+    <%= form.text_field :ingresso_id, id: :pedido_ingresso_id %>
   </div>
 
   <div class="field">

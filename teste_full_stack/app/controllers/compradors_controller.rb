@@ -69,6 +69,6 @@ class CompradorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comprador_params
-      params.require(:comprador).permit(:nome, :email, :telefone)
+      params.require(:comprador).permit(:nome, :telefone, :admin)
     end
 end

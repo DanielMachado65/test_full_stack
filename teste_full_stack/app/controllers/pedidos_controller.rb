@@ -24,14 +24,7 @@ class PedidosController < ApplicationController
   # POST /pedidos
   # POST /pedidos.json
   def create
-    @comprador = Comprador.find_by(nome: params[:comprador_nome])
-    @ingresso = Ingresso.find_by(nome: params[:ingresso_nome])
-    if @comprador and @ingresso
-      puts '-------- existe --------------'
-      @pedido = Pedido.new(pedido_params)
-    else
-      puts '--------- nao existe ----------'
-    end
+    @pedido = Pedido.new(pedido_params)
 
     respond_to do |format|
       if @pedido.save

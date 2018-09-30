@@ -17,7 +17,7 @@ class CompradorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create comprador" do
     assert_difference('Comprador.count') do
-      post compradors_url, params: { comprador: { email: @comprador.email, nome: @comprador.nome, telefone: @comprador.telefone } }
+      post compradors_url, params: { comprador: { admin: @comprador.admin, nome: @comprador.nome, telefone: @comprador.telefone } }
     end
 
     assert_redirected_to comprador_url(Comprador.last)
@@ -34,7 +34,7 @@ class CompradorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update comprador" do
-    patch comprador_url(@comprador), params: { comprador: { email: @comprador.email, nome: @comprador.nome, telefone: @comprador.telefone } }
+    patch comprador_url(@comprador), params: { comprador: { admin: @comprador.admin, nome: @comprador.nome, telefone: @comprador.telefone } }
     assert_redirected_to comprador_url(@comprador)
   end
 
