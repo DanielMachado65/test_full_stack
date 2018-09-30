@@ -1,26 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pedidos</h1>
+<h2>Esses são seus pedidos <%= current_comprador.nome %> </h2>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
-      <th>Comprador</th>
-      <th>Ingresso</th>
-      <th>Pago</th>
-      <th colspan="3"></th>
+      <th scope="col">Ingresso</th>
+      <th scope="col">Data</th>
+      <th scope="col">preco</th>
+      <th scope="col">taxa</th>
+      <th scope="col">Pago</th>
     </tr>
   </thead>
-
   <tbody>
     <% @pedidos.each do |pedido| %>
       <tr>
-        <td><%= current_comprador.nome %></td>
         <td><%= pedido.ingresso.nome %></td>
+        <td><%= pedido.ingresso.data %></td>
+        <td><%= pedido.ingresso.preco %></td>
+        <td><%= pedido.ingresso.taxa %></td>
         <td><%= pedido.pago %></td>
-        <td><%= link_to 'Show', pedido %></td>
-        <td><%= link_to 'Edit', edit_pedido_path(pedido) %></td>
-        <td><%= link_to 'Destroy', pedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', pedido %></td>
+        <td><%= link_to 'Editar', edit_pedido_path(pedido) %></td>
+        <td><%= link_to 'Cancelar', pedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

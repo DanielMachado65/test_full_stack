@@ -24,8 +24,7 @@ class PedidosController < ApplicationController
   # POST /pedidos
   # POST /pedidos.json
   def create
-    @pedido = Pedido.new(pedido_params)
-
+    @pedido =  Pedido.new(comprador_id: current_comprador.id, ingresso_id: '1', pago:true)
     respond_to do |format|
       if @pedido.save
         format.html { redirect_to @pedido, notice: 'Pedido was successfully created.' }
