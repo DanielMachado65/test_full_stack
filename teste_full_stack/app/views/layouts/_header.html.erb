@@ -7,8 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto"></ul>
 
+      <!-- Direcionar para se o usuário quiser cadastrar um novo ingresso -->
+      <%= button_to "Criar um novo Ingresso", ingressos_path, :class => "btn mr-2 btn-outline-danger title_btn", :method => :get %>
+
+      <!-- Editar o perfil do usuário -->
       <%= link_to 'Editar Perfil', edit_comprador_path(current_comprador.id), :class => "btn btn-outline-danger mr-2 title_btn" %>
 
+      <!-- Parte do cadastro para logout do sistema -->
       <%= button_to "Logout", destroy_comprador_session_path, :class => "btn btn-outline-danger title_btn", :method => :delete %>
     </div>
   <% else %>

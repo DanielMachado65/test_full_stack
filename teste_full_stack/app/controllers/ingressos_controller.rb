@@ -23,6 +23,8 @@ class IngressosController < ApplicationController
 
   # POST /ingressos
   # POST /ingressos.json
+  # TODO: achar outra solução para fazer a validação por tipo de dado, por enquanto eu ainda não vi
+  # uma maneira de fazer no model a validação para tipo de dado. 
   def create
     @ingresso = Ingresso.new(ingresso_params)
     if @ingresso.preco != 0

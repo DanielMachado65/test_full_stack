@@ -3,6 +3,7 @@ class PedidosController < ApplicationController
 
   # GET /pedidos
   # GET /pedidos.json
+  # HACK: essa parte retorna as datas acima dos dias atuais.
   def index
     @pedidos = Pedido.joins(:ingresso).where(comprador_id: current_comprador.id).where("ingressos.data > ?", Time.now)
   end
@@ -23,6 +24,7 @@ class PedidosController < ApplicationController
 
   # POST /pedidos
   # POST /pedidos.json
+  # HACK: validação dos pedidos atuais. 
   def create
     @pedido =  Pedido.new(comprador_id: current_comprador.id, ingresso_id: params[:ingresso_id], pago: params[:pedido][:pago])
     if @pedido.ingresso.data > Time.now
