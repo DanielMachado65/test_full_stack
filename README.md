@@ -56,7 +56,7 @@ Para a conclusão do teste deverá ser enviado um link para o repositório GIT p
 
 # O que foi entregue:
 
-> " Eu tentei imitar a identidade visual do site `social Wave` "
+> **NOTA PESSOAL**: " Eu tentei imitar a identidade visual do site `social Wave` "
 
 os caminhos encontrado no sistema pode ser definido como 3 principais:
 1. `http://localhost:3000/ingressos` - esse é o caminho para os _CRUD_ dos ingressos
@@ -125,3 +125,7 @@ rails g devise Comprador
 
 rails g cancan:ability
 ```
+
+> **NOTA PESSOAL**: "gostei fazer o teste, ainda acredito que tem coisa ainda para terminar, e deixar mais bonito, porém por conta da minha apresentação na SIEPE, eu que redirecionar o foco, espero ser aceito para podermos trabalhar junto"
+
+att, Daniel Machado Pintos
