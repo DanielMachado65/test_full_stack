@@ -28,12 +28,11 @@
         <td><%= pedido.ingresso.data.strftime('%d/%m/%Y') %></td>
         <td><%= pedido.ingresso.preco %></td>
         <td><%= pedido.ingresso.taxa %></td>
-        <% if pedido.ingresso.taxa == "false" %>
-            <td><i class="material-remove"></i></td>
+        <% if pedido.pago == false %>
+          <td><i class="fa fa-close"></i></td>
         <% else %>
-            <td>true</td>
+          <td><i class="fa fa-check"></i></td>
         <%end%>
-        <td><%= pedido.pago %></td>
         <td><%= button_to "Mostrar", pedido, :class => "btn btn-sm btn-outline-danger title_btn", :method => :get %>
         </td>
         <td><%= button_to "Editar", edit_pedido_path(pedido), :class => "btn btn-sm btn-outline-danger title_btn", :method => :get %>
@@ -46,5 +45,13 @@
 </table>
 
 <br>
+<hr>
 
-<%= button_to "Novo Pedido", new_pedido_path, :class => "btn btn-outline-danger title_btn", :method => :get %>
+<div class="row">
+  <div class="col-md-2">
+    <%= button_to "Novo Pedido", new_pedido_path, :class => "btn btn-outline-danger title_btn", :method => :get %>
+  </div>
+  <div class="col-md-2">
+    <%= button_to "Criar um novo Ingresso", ingressos_path, :class => "btn btn-outline-danger title_btn", :method => :get %>
+  </div>
+</div>
