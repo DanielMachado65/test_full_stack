@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Comprador:</strong>
-  <%= @pedido.comprador.nome %>
-</p>
-
-<p>
-  <strong>Ingresso:</strong>
-  <%= @pedido.ingresso.nome %>
-</p>
-
-<p>
-  <strong>Pago:</strong>
-  <%= @pedido.pago %>
-</p>
-
-<%= link_to 'Edit', edit_pedido_path(@pedido) %> |
-<%= link_to 'Back', pedidos_path %>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col" class="title_header">Comprador</th>
+        <th scope="col" class="title_header">Ingresso</th>
+        <th scope="col" class="title_header">Pago</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @pedido.comprador.nome %></td>
+        <td><%= @pedido.ingresso.nome %></td>
+        <td><%= @pedido.pago %></td>
+      </tr>
+    </tbody>
+  </table>
+<%= link_to 'Edit', edit_pedido_path(@pedido), :class => "btn btn-outline-danger title_btn"%>
+<%= link_to 'Back', pedidos_path, :class => "btn btn-outline-danger title_btn"%>

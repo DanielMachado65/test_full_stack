@@ -1,24 +1,22 @@
 <p id="notice"><%= notice %></p>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col" class="title_header">Preço</th>
+      <th scope="col" class="title_header">Nome</th>
+      <th scope="col" class="title_header">Taxa</th>
+      <th scope="col" class="title_header">Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @ingresso.preco %></td>
+      <td><%= @ingresso.nome %></td>
+      <td><%= @ingresso.taxa %></td>
+      <td><%= @ingresso.data.strftime('%d/%m/%Y') %></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Preco:</strong>
-  <%= @ingresso.preco %>
-</p>
-
-<p>
-  <strong>Nome:</strong>
-  <%= @ingresso.nome %>
-</p>
-
-<p>
-  <strong>Taxa:</strong>
-  <%= @ingresso.taxa %>
-</p>
-
-<p>
-  <strong>Data:</strong>
-  <%= @ingresso.data %>
-</p>
-
-<%= link_to 'Edit', edit_ingresso_path(@ingresso) %> |
-<%= link_to 'Back', ingressos_path %>
+<%= link_to 'Editar', edit_ingresso_path(@ingresso), :class => "btn btn-outline-danger title_btn" %>
+<%= link_to 'Voltar', ingressos_path, :class => "btn btn-outline-danger title_btn" %>

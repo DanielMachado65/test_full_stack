@@ -1,17 +1,20 @@
-:root {
-  --cor-principal: #7952a1;
-  --cor-segundaria: #f1935d;
-}
-
 html, body {
   background-color: #ffd4bb;
 }
 
-h2 {
+h2, h1 {
   font-size: 2rem;
-  color: #5d358987;
-  text-align: right;
-  text-shadow: -1px 1px 1px black;
+  color: #f1935d;
+  text-align: center;
+  text-shadow: -1px 1px 1px #f1935d;
+}
+
+label {
+  display: block;
+  color: white;
+  text-shadow: -1px 1px 1px #f1935d;
+  font-size: 1.5rem;
+  text-align: left;
 }
 
 .table-dark {
@@ -22,7 +25,9 @@ h2 {
 }
 
 .title_header {
+  font-size: 2rem;
   color: #f1935d;
+  text-shadow: -1px 1px 1px #f1935d;
 }
 
 .navbar-social {
@@ -47,4 +52,40 @@ h2 {
 .title_header:hover {
   color: white;
   text-decoration: none;
+}
+
+.login {
+  padding: 50px;
+  margin: 5%;
+  background-color: #5D3589;
+  box-shadow: 1px 2px 2px 0px #f18140, -3px -1px 2px 0px #f18140;
+}
+
+.form-control {
+  margin-top: -15px;
+  color: #ffffff !important;
+  background-color: #f1935d !important;
+}
+
+.form-control {
+  color: #ffffff;
+  background-color: #f1935d;
+  border-color: #f1935d;
+}
+
+.form-control:focus {
+  border-color: #f1935d;
+  box-shadow: 2px 1px 8px 0rem #424242;
+}
+
+.senha-text{
+  color: white;
+}
+
+.link-text{
+  color:white;
+}
+
+.link-text:hover{
+  color:white;
 }

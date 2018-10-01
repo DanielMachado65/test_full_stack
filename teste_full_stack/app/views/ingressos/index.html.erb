@@ -2,14 +2,14 @@
 
 <h1>Ingressos</h1>
 
-<table>
+<table class="table table-dark">
   <thead>
     <tr>
-      <th>Preco</th>
-      <th>Nome</th>
-      <th>Taxa</th>
-      <th>Data</th>
-      <th colspan="3"></th>
+      <th scope="col" class="title_header">Preco</th>
+      <th scope="col" class="title_header">Nome</th>
+      <th scope="col" class="title_header">Taxa</th>
+      <th scope="col" class="title_header">Data</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -19,10 +19,10 @@
         <td><%= ingresso.preco %></td>
         <td><%= ingresso.nome %></td>
         <td><%= ingresso.taxa %></td>
-        <td><%= ingresso.data %></td>
-        <td><%= link_to 'Show', ingresso %></td>
-        <td><%= link_to 'Edit', edit_ingresso_path(ingresso) %></td>
-        <td><%= link_to 'Destroy', ingresso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= ingresso.data.strftime('%d/%m/%Y') %></td>
+        <td><%= link_to 'Mostrar', ingresso, :class => "btn btn-sm btn-outline-danger title_btn" %></td>
+        <td><%= link_to 'Editar', edit_ingresso_path(ingresso), :class => "btn btn-sm btn-outline-danger title_btn" %></td>
+        <td><%= link_to 'Eliminar', ingresso, :class => "btn btn-sm btn-outline-danger title_btn", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Ingresso', new_ingresso_path %>
+<%= link_to 'New Ingresso', new_ingresso_path , :class => "btn btn-outline-danger title_btn"%>

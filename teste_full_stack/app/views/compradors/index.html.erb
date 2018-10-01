@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Compradors</h1>
+<h1>Compradores</h1>
 
-<table>
+<table class="table table-dark">
   <thead>
     <tr>
-      <th>Nome</th>
-      <th>Telefone</th>
-      <th>Admin</th>
-      <th> Email </th>
+      <th scope="col" class="title_header">Nome</th>
+      <th scope="col" class="title_header">Telefone</th>
+      <th scope="col" class="title_header">Admin</th>
+      <th scope="col" class="title_header">Email</th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -20,14 +20,14 @@
         <td><%= comprador.telefone %></td>
         <td><%= comprador.admin %></td>
         <td><%= comprador.email %></td>
-        <td><%= link_to 'Show', comprador %></td>
-        <td><%= link_to 'Edit', edit_comprador_path(comprador) %></td>
-        <td><%= link_to 'Destroy', comprador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostar', comprador, :class => "btn btn-sm btn-outline-danger title_btn" %></td>
+        <td><%= link_to 'Editar', edit_comprador_path(comprador), :class => "btn btn-sm btn-outline-danger title_btn" %></td>
+        <td><%= link_to 'Eliminar', comprador, :class => "btn btn-sm btn-outline-danger title_btn", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<%= link_to('Logout', destroy_comprador_session_path,  :method=>'delete') %>
-<%= link_to 'New Comprador', new_comprador_path %>
+<%= link_to('Logout', destroy_comprador_session_path, :class => "btn btn-sm btn-outline-danger title_btn", :method=>'delete') %>
+<%= link_to 'Novo Comprador', new_comprador_path , :class => "btn btn-sm btn-outline-danger title_btn"%>

@@ -1,36 +1,56 @@
-<%= form_with(model: comprador, local: true) do |form| %>
-<% if comprador.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(comprador.errors.count, "error") %>
-      prohibited this comprador from being saved:</h2>
+<div class="login">
+  <%= form_with(model: comprador, local: true) do |form| %>
+  <% if comprador.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comprador.errors.count, "error") %>
+        prohibited this comprador from being saved:</h2>
 
-    <ul>
-      <% comprador.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
+      <ul>
+        <% comprador.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-2">
+      <%= form.label :telefone %>
+    </div>
+    <div class="col-md-8">
+      <%= form.text_field :telefone, id: :comprador_telefone , :class => "form-control"%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <%= form.label :nome %>
+    </div>
+    <div class="col-md-8">
+      <%= form.text_field :nome, id: :comprador_nome , :class => "form-control"%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <%= form.label :admin %>
+    </div>
+    <div class="col-md-8">
+      <%= form.check_box :admin, id: :comprador_admin , :class => "form-check"%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <%= form.label :email %>
+    </div>
+    <div class="col-md-8">
+      <%= form.text_field :email, id: :comprador_admin , :class => "form-control"%>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Criar novo Comprador", :class => "btn btn-outline-danger title_btn"%>
   </div>
 <% end %>
-<div class="field">
-  <%= form.label :telefone %>
-  <%= form.text_field :telefone, id: :comprador_telefone %>
 </div>
-<div class="field">
-  <%= form.label :nome %>
-  <%= form.text_field :nome, id: :comprador_nome %>
-</div>
-
-<div class="field">
-  <%= form.label :admin %>
-  <%= form.check_box :admin, id: :comprador_admin %>
-</div>
-
-<div class="field">
-  <%= form.label :email %>
-  <%= form.text_field :email, id: :comprador_admin %>
-</div>
-
-<div class="actions">
-  <%= form.submit %>
-</div>
-<% end %>
