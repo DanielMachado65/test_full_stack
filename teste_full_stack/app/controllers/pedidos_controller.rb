@@ -4,7 +4,7 @@ class PedidosController < ApplicationController
   # GET /pedidos
   # GET /pedidos.json
   def index
-    @pedidos = Pedido.all
+    @pedidos = Pedido.joins(:ingresso).where(comprador_id: current_comprador.id).where("ingressos.data > ?", Time.now)
   end
 
   # GET /pedidos/1
@@ -24,16 +24,21 @@ class PedidosController < ApplicationController
   # POST /pedidos
   # POST /pedidos.json
   def create
-    @pedido =  Pedido.new(comprador_id: current_comprador.id, ingresso_id: '1', pago:true)
-    respond_to do |format|
-      if @pedido.save
-        format.html { redirect_to @pedido, notice: 'Pedido was successfully created.' }
-        format.json { render :show, status: :created, location: @pedido }
-      else
-        format.html { render :new }
-        format.json { render json: @pedido.errors, status: :unprocessable_entity }
+    @pedido =  Pedido.new(comprador_id: current_comprador.id, ingresso_id: params[:ingresso_id], pago: params[:pedido][:pago])
+    if @pedido.ingresso.data > Time.now
+      respond_to do |format|
+        if @pedido.save
+          format.html { redirect_to @pedido, notice: 'Pedido foi criado com sucesso.' }
+          format.json { render :show, status: :created, location: @pedido }
+        else
+          format.html { render :new }
+          format.json { render json: @pedido.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to @pedido, notice: 'Pedido não pode ser criado, porque é mais antigo que a data atual'
     end
+
   end
 
   # PATCH/PUT /pedidos/1

@@ -1,32 +1,28 @@
 <%= form_with(model: pedido, local: true) do |form| %>
-  <% if pedido.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(pedido.errors.count, "error") %> prohibited this pedido from being saved:</h2>
+<% if pedido.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(pedido.errors.count, "error") %>
+      prohibited this pedido from being saved:</h2>
 
-      <ul>
+    <ul>
       <% pedido.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :comprador_id %>
-    <%= form.text_field :comprador_id, id: :pedido_comprador_id %>
+    </ul>
   </div>
+<% end %>
 
-  <div class="field">
-    <%= form.label :ingresso_id %>
-    <%= form.text_field :ingresso_id, id: :pedido_ingresso_id %>
-  </div>
+<div class="field">
+  <%= form.label :ingresso_id %>
+  <%= select_tag 'ingresso_id', options_from_collection_for_select(Ingresso.all, 'id', 'nome') %>
+</div>
 
-  <div class="field">
-    <%= form.label :pago %>
-    <%= form.check_box :pago, id: :pedido_pago %>
-  </div>
+<div class="field">
+  <%= form.label :pago %>
+  <%= form.check_box :pago, id: :pedido_pago %>
+</div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<div class="actions">
+  <%= form.submit %>
+</div>
 <% end %>

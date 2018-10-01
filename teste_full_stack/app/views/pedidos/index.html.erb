@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Esses são seus pedidos <%= current_comprador.nome %> </h2>
+<h2>Esses são seus pedidos
+  <%= current_comprador.nome %>
+</h2>
 
 <table class="table">
   <thead class="thead-dark">
@@ -16,7 +18,7 @@
     <% @pedidos.each do |pedido| %>
       <tr>
         <td><%= pedido.ingresso.nome %></td>
-        <td><%= pedido.ingresso.data %></td>
+        <td><%= pedido.ingresso.data.strftime('%d/%m/%Y') %></td>
         <td><%= pedido.ingresso.preco %></td>
         <td><%= pedido.ingresso.taxa %></td>
         <td><%= pedido.pago %></td>
