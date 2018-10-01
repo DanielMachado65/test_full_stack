@@ -43,9 +43,9 @@
     </div>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :data %>
-    <%= form.datetime_select :data, id: :ingresso_data %>
+    <%= form.datetime_select :data, { ampm: false }, { class: "mr-2 mt-2 form-control" } %>
   </div>
 
   <div class="actions">
