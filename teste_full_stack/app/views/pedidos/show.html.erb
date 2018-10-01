@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-warning mt-3" role="alert">
+    <%= notice %>
+  </div>
+<% end%>
   <table class="table table-dark">
     <thead>
       <tr>
@@ -15,5 +19,5 @@
       </tr>
     </tbody>
   </table>
-<%= link_to 'Edit', edit_pedido_path(@pedido), :class => "btn btn-outline-danger title_btn"%>
-<%= link_to 'Back', pedidos_path, :class => "btn btn-outline-danger title_btn"%>
+<%= link_to 'Editar', edit_pedido_path(@pedido), :class => "btn btn-outline-danger title_btn"%>
+<%= link_to 'Voltar', pedidos_path, :class => "btn btn-outline-danger title_btn"%>

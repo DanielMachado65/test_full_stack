@@ -25,14 +25,20 @@ class IngressosController < ApplicationController
   # POST /ingressos.json
   def create
     @ingresso = Ingresso.new(ingresso_params)
-
-    respond_to do |format|
-      if @ingresso.save
-        format.html { redirect_to @ingresso, notice: 'Ingresso was successfully created.' }
-        format.json { render :show, status: :created, location: @ingresso }
-      else
-        format.html { render :new }
-        format.json { render json: @ingresso.errors, status: :unprocessable_entity }
+    if @ingresso.preco != 0
+      respond_to do |format|
+        if @ingresso.save
+          format.html { redirect_to @ingresso, notice: 'Ingresso was successfully created.' }
+          format.json { render :show, status: :created, location: @ingresso }
+        else
+          format.html { render :new }
+          format.json { render json: @ingresso.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to @ingresso, notice: 'Não foi criar os tipos de dados estão errados.' }
+        format.json { render json: @ingresso.errors}
       end
     end
   end

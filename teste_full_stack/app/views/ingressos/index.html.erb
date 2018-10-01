@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-warning mt-3" role="alert">
+    <%= notice %>
+  </div>
+<% end%>
 
 <h1>Ingressos</h1>
 
@@ -30,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Ingresso', new_ingresso_path , :class => "btn btn-outline-danger title_btn"%>
+<%= link_to 'Novo Ingresso', new_ingresso_path , :class => "btn btn-outline-danger title_btn"%>

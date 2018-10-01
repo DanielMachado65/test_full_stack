@@ -1,5 +1,10 @@
 <h1>New Comprador</h1>
+<% if notice %>
+  <div class="alert alert-warning mt-3" role="alert">
+    <%= notice %>
+  </div>
+<% end%>
 
 <%= render 'form', comprador: @comprador %>
 
-<%= link_to 'Back', compradors_path ,  :class => "btn btn-outline-danger title_btn" %>
+<%= link_to 'Voltar', home_path , :class => "btn btn-outline-danger title_btn" %>

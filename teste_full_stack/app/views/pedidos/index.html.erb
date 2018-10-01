@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-warning mt-3" role="alert">
+    <%= notice %>
+  </div>
+<% end%>
 
 <h2>Esses são seus pedidos
   <%= current_comprador.nome %>
@@ -24,6 +28,11 @@
         <td><%= pedido.ingresso.data.strftime('%d/%m/%Y') %></td>
         <td><%= pedido.ingresso.preco %></td>
         <td><%= pedido.ingresso.taxa %></td>
+        <% if pedido.ingresso.taxa == "false" %>
+            <td><i class="material-remove"></i></td>
+        <% else %>
+            <td>true</td>
+        <%end%>
         <td><%= pedido.pago %></td>
         <td><%= button_to "Mostrar", pedido, :class => "btn btn-sm btn-outline-danger title_btn", :method => :get %>
         </td>
@@ -38,4 +47,4 @@
 
 <br>
 
-<%= button_to "New Pedido", new_pedido_path, :class => "btn btn-outline-danger title_btn", :method => :get %>
+<%= button_to "Novo Pedido", new_pedido_path, :class => "btn btn-outline-danger title_btn", :method => :get %>

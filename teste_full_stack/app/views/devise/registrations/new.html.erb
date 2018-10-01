@@ -22,6 +22,16 @@
   </div>
 
   <div class="field form-group">
+    <%= f.label :Nome %><br/>
+    <%= f.text_field :nome, :class => "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :telefone %><br/>
+    <%= f.text_field :telefone, :class => "form-control" %>
+  </div>
+
+  <div class="field form-group">
     <%= f.label :Confirmação %><br/>
     <%= f.password_field :password_confirmation, autocomplete: "new-password",:class => "form-control" %>
   </div>

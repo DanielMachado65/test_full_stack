@@ -28,7 +28,7 @@ class CompradorsController < ApplicationController
 
     respond_to do |format|
       if @comprador.save
-        format.html { redirect_to @comprador, notice: 'Comprador was successfully created.' }
+        format.html { redirect_to home_path, notice: 'Comprador foi criado.' }
         format.json { render :show, status: :created, location: @comprador }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CompradorsController < ApplicationController
   def update
     respond_to do |format|
       if @comprador.update(comprador_params)
-        format.html { redirect_to @comprador, notice: 'Comprador was successfully updated.' }
+        format.html { redirect_to @comprador, notice: 'Comprador foi atualizado.' }
         format.json { render :show, status: :ok, location: @comprador }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class CompradorsController < ApplicationController
   def destroy
     @comprador.destroy
     respond_to do |format|
-      format.html { redirect_to compradors_url, notice: 'Comprador was successfully destroyed.' }
+      format.html { redirect_to compradors_url, notice: 'Ok, foi eliminado comprador.' }
       format.json { head :no_content }
     end
   end
