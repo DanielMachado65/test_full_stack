@@ -4,14 +4,17 @@
   <%= current_comprador.nome %>
 </h2>
 
-<table class="table">
-  <thead class="thead-dark">
+<table class="table table-dark">
+  <thead>
     <tr>
-      <th scope="col">Ingresso</th>
-      <th scope="col">Data</th>
-      <th scope="col">preco</th>
-      <th scope="col">taxa</th>
-      <th scope="col">Pago</th>
+      <th scope="col" class="title_header">Nome do Ingresso</th>
+      <th scope="col" class="title_header">Data</th>
+      <th scope="col" class="title_header">preco</th>
+      <th scope="col" class="title_header">taxa</th>
+      <th scope="col" class="title_header">Pago</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -22,9 +25,12 @@
         <td><%= pedido.ingresso.preco %></td>
         <td><%= pedido.ingresso.taxa %></td>
         <td><%= pedido.pago %></td>
-        <td><%= link_to 'Mostrar', pedido %></td>
-        <td><%= link_to 'Editar', edit_pedido_path(pedido) %></td>
-        <td><%= link_to 'Cancelar', pedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to "Mostrar", pedido, :class => "btn btn-sm btn-outline-danger title_btn", :method => :get %>
+        </td>
+        <td><%= button_to "Editar", edit_pedido_path(pedido), :class => "btn btn-sm btn-outline-danger title_btn", :method => :get %>
+        </td>
+        <td><%= button_to "Cancelar", pedido, :class => "btn btn-sm btn-outline-danger title_btn", method: :delete, data: { confirm: 'Are you sure?' }%>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Pedido', new_pedido_path %>
+<%= button_to "New Pedido", new_pedido_path, :class => "btn btn-outline-danger title_btn", :method => :get %>
